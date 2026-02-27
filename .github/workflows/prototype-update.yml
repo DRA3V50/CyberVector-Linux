@@ -1,0 +1,36 @@
+name: CyberVector Prototype Update
+
+on:
+  schedule:
+    - cron: '0 14,2 * * *'  # 9AM and 9PM EST (UTC adjusted)
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run patch audit
+        run: bash tools/patch_audit.sh
+
+      - name: Run exposure snapshot
+        run: bash tools/exposure_snapshot.sh
+
+      - name: Run auth log parser
+        run: python tools/log_parser.py
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Prototype daily update" || echo "No changes to commit"
+          git push
