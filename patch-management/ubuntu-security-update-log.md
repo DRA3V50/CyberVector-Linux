@@ -1,1 +1,30 @@
+# Ubuntu Security Update Log
+Generated on: Fri Feb 27 20:19:07 UTC 2026
 
+## Upgradable Packages
+Listing...
+base-files/noble-updates 13ubuntu10.4 amd64 [upgradable from: 13ubuntu10.3]
+cloud-init/noble-updates 25.3-0ubuntu1~24.04.1 all [upgradable from: 25.2-0ubuntu1~24.04.1]
+firefox/noble 1:1snap1-0ubuntu5 amd64 [upgradable from: 147.0.4+build1-0ubuntu0.24.04.1~mt1]
+gir1.2-glib-2.0/noble-updates,noble-security 2.80.0-6ubuntu3.8 amd64 [upgradable from: 2.80.0-6ubuntu3.7]
+initramfs-tools-bin/noble-updates 0.142ubuntu25.8 amd64 [upgradable from: 0.142ubuntu25.5]
+initramfs-tools-core/noble-updates 0.142ubuntu25.8 all [upgradable from: 0.142ubuntu25.5]
+initramfs-tools/noble-updates 0.142ubuntu25.8 all [upgradable from: 0.142ubuntu25.5]
+libglib2.0-0t64/noble-updates,noble-security 2.80.0-6ubuntu3.8 amd64 [upgradable from: 2.80.0-6ubuntu3.7]
+libglib2.0-bin/noble-updates,noble-security 2.80.0-6ubuntu3.8 amd64 [upgradable from: 2.80.0-6ubuntu3.7]
+libglib2.0-data/noble-updates,noble-security 2.80.0-6ubuntu3.8 all [upgradable from: 2.80.0-6ubuntu3.7]
+libgnutls30t64/noble-updates,noble-security 3.8.3-1.1ubuntu3.5 amd64 [upgradable from: 3.8.3-1.1ubuntu3.4]
+libldap-common/noble-updates 2.6.10+dfsg-0ubuntu0.24.04.1 all [upgradable from: 2.6.7+dfsg-1~exp1ubuntu8.2]
+libldap2/noble-updates 2.6.10+dfsg-0ubuntu0.24.04.1 amd64 [upgradable from: 2.6.7+dfsg-1~exp1ubuntu8.2]
+libpng16-16t64/noble-updates,noble-security 1.6.43-5ubuntu0.5 amd64 [upgradable from: 1.6.43-5ubuntu0.3]
+libssh-4/noble-updates,noble-security 0.10.6-2ubuntu0.3 amd64 [upgradable from: 0.10.6-2ubuntu0.2]
+linux-azure/noble-updates,noble-security 6.17.0-1008.8~24.04.1 amd64 [upgradable from: 6.14.0-1017.17~24.04.1]
+linux-cloud-tools-azure/noble-updates,noble-security 6.17.0-1008.8~24.04.1 amd64 [upgradable from: 6.14.0-1017.17~24.04.1]
+linux-headers-azure/noble-updates,noble-security 6.17.0-1008.8~24.04.1 amd64 [upgradable from: 6.14.0-1017.17~24.04.1]
+linux-image-azure/noble-updates,noble-security 6.17.0-1008.8~24.04.1 amd64 [upgradable from: 6.14.0-1017.17~24.04.1]
+linux-tools-azure/noble-updates,noble-security 6.17.0-1008.8~24.04.1 amd64 [upgradable from: 6.14.0-1017.17~24.04.1]
+motd-news-config/noble-updates 13ubuntu10.4 all [upgradable from: 13ubuntu10.3]
+powershell/noble 7.5.4-1.deb amd64 [upgradable from: 7.4.13-1.deb]
+python-apt-common/noble-updates 2.7.7ubuntu5.2 all [upgradable from: 2.7.7ubuntu5.1]
+python3-apt/noble-updates 2.7.7ubuntu5.2 amd64 [upgradable from: 2.7.7ubuntu5.1]
+systemd-hwe-hwdb/noble-updates 255.1.7 all [upgradable from: 255.1.6]
