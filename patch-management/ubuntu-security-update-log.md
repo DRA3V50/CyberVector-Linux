@@ -1,7 +1,7 @@
-# Ubuntu Security Update Log
-Generated on: Sat Feb 28 14:12:43 UTC 2026
+# Patch Intelligence Report
+Generated on: Sat Feb 28 20:50:37 UTC 2026
 
-## Upgradable Packages
+## Pending Updates
 Listing...
 base-files/noble-updates 13ubuntu10.4 amd64 [upgradable from: 13ubuntu10.3]
 cloud-init/noble-updates 25.3-0ubuntu1~24.04.1 all [upgradable from: 25.2-0ubuntu1~24.04.1]
@@ -28,3 +28,8 @@ powershell/noble 7.5.4-1.deb amd64 [upgradable from: 7.4.13-1.deb]
 python-apt-common/noble-updates 2.7.7ubuntu5.2 all [upgradable from: 2.7.7ubuntu5.1]
 python3-apt/noble-updates 2.7.7ubuntu5.2 amd64 [upgradable from: 2.7.7ubuntu5.1]
 systemd-hwe-hwdb/noble-updates 255.1.7 all [upgradable from: 255.1.6]
+
+## Kernel Version
+6.14.0-1017-azure
+
+## Exploitability Analysis
