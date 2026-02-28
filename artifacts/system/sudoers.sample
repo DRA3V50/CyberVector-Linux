@@ -1,1 +1,3 @@
-
+root    ALL=(ALL:ALL) ALL
+admin   ALL=(ALL) ALL
+devops  ALL=(ALL) NOPASSWD: ALL
