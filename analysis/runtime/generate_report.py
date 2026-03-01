@@ -2,7 +2,6 @@ import os
 from datetime import date
 
 today = date.today().isoformat()
-report_path = f"artifacts/reports/summary_{today}.md"
 
 os.makedirs("artifacts/reports", exist_ok=True)
 
@@ -15,21 +14,34 @@ if os.path.exists(auth_file):
             if line.strip().isdigit():
                 failed_count = int(line.strip())
 
+# Determine containment status
+if failed_count > 50:
+    status = "Active Containment Required"
+elif failed_count > 10:
+    status = "Elevated Monitoring"
+else:
+    status = "Monitoring"
+
 summary = f"""
 ## Daily Containment Report — {today}
 
-**Phase I – Exposure Events**
-- Failed SSH Attempts: {failed_count}
+### Phase I — Exposure Detection
+Failed SSH Attempts: {failed_count}
 
-**Phase II – Surface Mapping**
-- Network scan executed
+### Phase II — Persistence & Privilege Surface
+Systemd services reviewed
+SUID binaries audited
+Cron persistence paths inspected
 
-**Phase III – Immunization Check**
-- Patch review completed
+### Phase III — Hardening & Immunization
+Patch status reviewed
+SSH configuration validated
 
-Containment Status: Monitoring
+### Containment Status
+{status}
 """
 
+report_path = f"artifacts/reports/summary_{today}.md"
 with open(report_path, "w") as f:
     f.write(summary)
 
