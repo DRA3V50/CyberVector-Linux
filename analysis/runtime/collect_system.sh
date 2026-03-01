@@ -1,11 +1,15 @@
-#!/bin/bash
+echo ""
+echo "Running Services:" >> $OUTPUT
+systemctl list-units --type=service --state=running >> $OUTPUT
 
-mkdir -p artifacts/system
+echo ""
+echo "SUID Files:" >> $OUTPUT
+find / -perm -4000 2>/dev/null >> $OUTPUT
 
-OUTPUT="artifacts/system/system_$(date +%F).log"
+echo ""
+echo "Cron Jobs:" >> $OUTPUT
+ls -la /etc/cron* >> $OUTPUT 2>/dev/null
 
-echo "[Phase III - Host Immunization Status]" > $OUTPUT
-echo "Collection Time: $(date)" >> $OUTPUT
-echo "-----------------------------------" >> $OUTPUT
-
-apt list --upgradable 2>/dev/null >> $OUTPUT
+echo ""
+echo "SSH Configuration Snippet:" >> $OUTPUT
+grep -E "PermitRootLogin|PasswordAuthentication" /etc/ssh/sshd_config 2>/dev/null >> $OUTPUT
