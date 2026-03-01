@@ -5,8 +5,8 @@ today = date.today().isoformat()
 
 os.makedirs("artifacts/reports", exist_ok=True)
 
-failed_count = 0
 auth_file = f"artifacts/auth/auth_{today}.log"
+failed_count = 0
 
 if os.path.exists(auth_file):
     with open(auth_file) as f:
@@ -14,47 +14,33 @@ if os.path.exists(auth_file):
             if line.strip().isdigit():
                 failed_count = int(line.strip())
 
-# Determine containment status
 if failed_count > 50:
-    status = "Active Containment Required"
+    status = "High Risk - Containment Required"
 elif failed_count > 10:
     status = "Elevated Monitoring"
 else:
-    status = "Monitoring"
+    status = "Normal Monitoring"
 
 summary = f"""
-## Daily Containment Report — {today}
+## Daily Security Summary — {today}
 
-### Phase I — Exposure Detection
+### Exposure Detection
 Failed SSH Attempts: {failed_count}
 
-### Phase II — Persistence & Privilege Surface
-Systemd services reviewed
-SUID binaries audited
+### Network Surface
+Active listening ports reviewed
+Firewall status checked
+
+### System Integrity
+Running services audited
+SUID binaries enumerated
 Cron persistence paths inspected
+SSH hardening settings reviewed
 
-### Phase III — Hardening & Immunization
-Patch status reviewed
-SSH configuration validated
-
-### Containment Status
+### Risk Level
 {status}
 """
 
 report_path = f"artifacts/reports/summary_{today}.md"
 with open(report_path, "w") as f:
     f.write(summary)
-
-# Inject into README
-with open("README.md", "r") as f:
-    readme = f.read()
-
-start_marker = "<!-- CVX-REPORT-START -->"
-end_marker = "<!-- CVX-REPORT-END -->"
-
-if start_marker in readme and end_marker in readme:
-    before = readme.split(start_marker)[0]
-    after = readme.split(end_marker)[1]
-    new_readme = before + start_marker + summary + end_marker + after
-    with open("README.md", "w") as f:
-        f.write(new_readme)
