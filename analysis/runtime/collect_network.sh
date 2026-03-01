@@ -1,11 +1,7 @@
-#!/bin/bash
+echo ""
+echo "Listening Ports:" >> $OUTPUT
+ss -tulnp >> $OUTPUT 2>/dev/null
 
-mkdir -p artifacts/network
-
-OUTPUT="artifacts/network/network_$(date +%F).log"
-
-echo "[Phase II - Surface Exposure Mapping]" > $OUTPUT
-echo "Collection Time: $(date)" >> $OUTPUT
-echo "-----------------------------------" >> $OUTPUT
-
-ss -tulnp >> $OUTPUT
+echo ""
+echo "Firewall Status:" >> $OUTPUT
+sudo ufw status >> $OUTPUT 2>/dev/null
