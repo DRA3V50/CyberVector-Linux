@@ -57,7 +57,7 @@ event_roll = random.randint(1, 100)
 
 if event_roll <= 55:
     # Stable / healthier period
-    delta = random.randint(-35, 10)
+    delta = random.randint(-15, 18)
 
 elif event_roll <= 85:
     # Moderate activity
