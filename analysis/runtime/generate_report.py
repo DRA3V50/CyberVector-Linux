@@ -72,14 +72,14 @@ else:
     delta = random.randint(60, 120)
 
 # smoother carry-over from previous score
-risk_score = round((previous_risk * 0.72) + delta, 1)
+risk_score = round((previous_risk * 0.88) + delta, 1)
 
 # prevent impossible negatives
 risk_score = max(0, risk_score)
 
 # occasional automatic recovery drops
-if random.randint(1, 100) <= 18:
-    recovery = random.randint(15, 45)
+if random.randint(1, 100) <= 10:
+    recovery = random.randint(8, 25)
     risk_score = max(0, round(risk_score - recovery, 1))
 
 # hard cap
